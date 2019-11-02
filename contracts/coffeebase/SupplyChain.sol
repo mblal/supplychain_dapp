@@ -2,8 +2,10 @@ pragma solidity >=0.4.24;
 
 import "../coffeeaccesscontrol/RetailerRole.sol";
 import "../coffeeaccesscontrol/ConsumerRole.sol";
+import "../coffeeaccesscontrol/DistributorRole.sol";
+import "../coffeeaccesscontrol/FarmerRole.sol";
 // Define a contract 'Supplychain'
-contract SupplyChain is RetailerRole, ConsumerRole {
+contract SupplyChain is RetailerRole, ConsumerRole, DistributorRole, FarmerRole {
 
   // Define 'owner'
   address owner;
@@ -75,7 +77,7 @@ contract SupplyChain is RetailerRole, ConsumerRole {
         isConsumer(msg.sender);
         _;
     }
-    
+
   // Define a modifer that verifies the Caller
   modifier verifyCaller (address _address) {
     require(msg.sender == _address, "The address don't match with caller's address");

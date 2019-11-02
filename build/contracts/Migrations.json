@@ -1373,10 +1373,16 @@
       "links": {},
       "address": "0x64985711aE34333329e519E53dBfb73a342E7274",
       "transactionHash": "0x60449f3bb6e2b2c2c99fa2a061d0bca536667b9856eedd39feb8a40e9c7bc9e7"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x2BA82Ef6345d873e0b9988a9292C2F43D4dDF7ea",
+      "transactionHash": "0x32bc9e9e13dc0a6b2fe88747fd52009c6f39b9ee0bac4f48f7d9b9a1bec563e2"
     }
   },
   "schemaVersion": "3.0.16",
-  "updatedAt": "2019-11-01T19:50:41.833Z",
+  "updatedAt": "2019-11-02T18:39:25.884Z",
   "devdoc": {
     "methods": {}
   },
