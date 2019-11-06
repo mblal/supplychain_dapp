@@ -9,7 +9,7 @@ import "../coffeecore/Ownable.sol";
 contract SupplyChain is RetailerRole, ConsumerRole, DistributorRole, FarmerRole, Ownable {
 
   // Define 'owner'
-  address owner;
+  address _owner;
 
   // Define a variable called 'upc' for Universal Product Code (UPC)
   uint  upc;
@@ -70,7 +70,7 @@ contract SupplyChain is RetailerRole, ConsumerRole, DistributorRole, FarmerRole,
 
   // Define a modifier that checks to see if msg.sender == owner of the contract
   modifier onlyOwner() {
-    require(msg.sender == owner, "You're not the owner of the current contract.");
+    require(msg.sender == _owner, "You're not the owner of the current contract.");
     _;
   }
 
@@ -159,14 +159,14 @@ contract SupplyChain is RetailerRole, ConsumerRole, DistributorRole, FarmerRole,
   // and set 'sku' to 1
   // and set 'upc' to 1
   constructor() public payable {
-    owner = msg.sender;
+    _owner = msg.sender;
     sku = 1;
     upc = 1;
   }
 
   // Define a function 'kill' if required
   function kill() public {
-    if (msg.sender == owner) {
+    if (msg.sender == _owner) {
       selfdestruct(msg.sender);
     }
   }
